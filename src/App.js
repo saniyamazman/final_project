@@ -10,10 +10,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" /> 
+            <img src={logo} className="App-logo" alt="logo" />
             <h2>TWIP</h2>
             <div className="link">
               <Link className="link" activeClassName='active' to="/mytrips">MY TRIPS</Link>
+
+              <Link className= "logIn" activeClassName='active' to="/LogInDashboard"> TEST LOGIN TEMP LINK </Link>
             </div>
         </div>
         {this.props.children}
