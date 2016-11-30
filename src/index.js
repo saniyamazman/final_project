@@ -12,7 +12,6 @@ ReactDOM.render(
 		<Router history={hashHistory}>
 			<Route path="/" component={App}>
 				<IndexRoute component={SearchPage}/>
-				<Route path="mytrips" component={MyTrips}/>
 			</Route>
 		</Router>
 	</MuiThemeProvider>,
