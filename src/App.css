@@ -1,5 +1,6 @@
 .App {
   text-align: inherit;
+
 }
 
 .App-logo {
@@ -8,14 +9,8 @@
   padding-left: 100px;
 }
 
-.App-header {
-  background-color: #212120;
-  height: 100px;
-  padding: 10px;
-  padding-top: 0px;
-  color: white;
-  position: relative;
-  margin-bottom: 0;
+nav {
+  height: 120px;
 }
 
 .App-intro {
@@ -43,5 +38,5 @@ a.link {
   letter-spacing: 1px;
   margin-top: 74px;
   text-decoration: none;
-  color: white;
+  color: black;
 }

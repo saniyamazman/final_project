@@ -3,21 +3,20 @@ import logo from './logo.png';
 import './App.css';
 import { Link } from 'react-router';
 import '../node_modules/font-awesome/css/font-awesome.css'
+import 'materialize-css';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
+        <nav>
+          <div class="nav-wrapper">
             <img src={logo} className="App-logo" alt="logo" />
             <h2>TWIP</h2>
-            <div className="link">
-              <Link className="link" activeClassName='active' to="/mytrips">MY TRIPS</Link>
-
-              <Link className= "logIn" activeClassName='active' to="/LogInDashboard"> TEST LOGIN TEMP LINK </Link>
-            </div>
-        </div>
+            <Link className="link" activeClassName='active' to="/trips">MY TRIPS</Link>
+          </div>
+        </nav>
         {this.props.children}
       </div>
     );

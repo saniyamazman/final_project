@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { auth } from '../firebaseConfig/auth'
+import { auth } from './auth'
 import bg from './nyc.jpg';
 import './App';
 

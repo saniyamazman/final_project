@@ -1,15 +1,16 @@
 //need twitter api to be able to search for a place
-
 import React from 'react';
 import bg from './nyc.jpg';
 import './Search.css'
-import SearchBar from 'react-search-bar';
+import SearchBar from 'react-search';
 
 var sectionBg = {
 	  width: "100%",
 	  height: "600px",
 	  opacity: "0.7",
-	  backgroundImage: "url(" + bg + ")"
+	  backgroundImage: "url(" + bg + ")",
+	  backgroundSize: "cover"
+
 	};
 
 var SearchPage = React.createClass({

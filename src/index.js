@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import SearchPage from './Search';
+import LogInDashboard from './LogInDashboard';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {IndexRoute, Router, Route, hashHistory} from 'react-router';
 
@@ -12,6 +13,7 @@ ReactDOM.render(
 		<Router history={hashHistory}>
 			<Route path="/" component={App}>
 				<IndexRoute component={SearchPage}/>
+				<Route path="trips" component={LogInDashboard}/>
 			</Route>
 		</Router>
 	</MuiThemeProvider>,
