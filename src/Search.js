@@ -1,8 +1,8 @@
 //need twitter api to be able to search for a place
-import React from 'react';
 import bg from './nyc.jpg';
 import './Search.css'
-import SearchBar from 'react-search';
+import 'materialize-css';
+import React, {Component} from 'react';
 
 var sectionBg = {
 	  width: "100%",
@@ -13,7 +13,19 @@ var sectionBg = {
 
 	};
 
-var SearchPage = React.createClass({
+class SearchBar extends Component {
+    constructor() {
+        super();
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange() {
+        this.props.onUserInput(
+            this.refs['filterTextInput'].value,
+            this.refs['inStockOnlyInput'].checked
+        );
+    }
+
 	render(){
 		return(
 			<div className="landing">
@@ -21,22 +33,19 @@ var SearchPage = React.createClass({
 				<div className="searchBar">
 					<h3>Find places where people go the most</h3>
 	      			<h1> Where do you want to go?</h1>
-
-	      			<SearchBar
-  						onChange={(searchTerm, resolve) => {
-					    // get suggestions asynchronously based on `searchTerm`,
-					    // then pass them to `resolve()` to populate suggestions
-					  	}}
-					  	onSearch={(searchTerm) => {
-					    // do something on search
-						}} 
-					/>
-
+		      			<form className="row">
+						    <input 
+							    type="text" 
+							    name="search" 
+							    placeholder="Type a city name..."
+							    onChange={this.handleChange} 
+						    />
+						</form>
 	      		</div>
 	      		</section>
 	      	</div>
 		)
 	}
-})
 
-export default SearchPage;
+}
+export default SearchBar;

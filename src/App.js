@@ -11,9 +11,9 @@ class App extends Component {
     return (
       <div className="App">
         <nav>
-          <div class="nav-wrapper">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>TWIP</h2>
+          <div className="nav-wrapper">
+            <Link activeClassName='active' to="/home"><img src={logo} className="App-logo" alt="logo" /></Link>
+            <Link className="h2"activeClassName='active' to="/home"><h2>TWIP</h2></Link>
             <Link className="link" activeClassName='active' to="/trips">MY TRIPS</Link>
           </div>
         </nav>

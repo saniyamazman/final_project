@@ -14,6 +14,7 @@ ReactDOM.render(
 			<Route path="/" component={App}>
 				<IndexRoute component={SearchPage}/>
 				<Route path="trips" component={LogInDashboard}/>
+				<Route path="home" component={SearchPage}/>
 			</Route>
 		</Router>
 	</MuiThemeProvider>,

@@ -4,13 +4,14 @@
 }
 
 .App-logo {
-  height: 110px;
+  height: 100px;
   float: left;
   padding-left: 100px;
 }
 
 nav {
-  height: 120px;
+  height: 110px;
+  background-color: black;
 }
 
 .App-intro {
@@ -23,14 +24,13 @@ font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;  fl
   margin-top: 20px;
   font-size: 70px;
   font-weight: 200;
+  text-decoration: none;
+  color: white;
 }
 
-div.link{
-    padding-right: 130px;
-}
 
-a.link {
-  padding-left: 15px;
+.link {
+  padding-right: 100px;
   float: right;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-weight: 200;
   font-size: 16px;
@@ -38,5 +38,5 @@ a.link {
   letter-spacing: 1px;
   margin-top: 74px;
   text-decoration: none;
-  color: black;
+  color: white;
 }
