@@ -40,6 +40,7 @@ class SearchBar extends Component {
 							    placeholder="Type a city name..."
 							    onChange={this.handleChange} 
 						    />
+						    <button> EXPLORE</button>
 						</form>
 	      		</div>
 	      		</section>
