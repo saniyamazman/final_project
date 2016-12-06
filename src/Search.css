@@ -29,11 +29,11 @@ input {
 	width: 100%;
 }
 
-button {
-	margin-left: 25%;
+.submitbutton {
+	margin-left: 42%;
 	margin-top: 2%;
-	margin-right: 25%;
-	width: 180px;
+	margin-right: 42%;
+	width: 16%;
 }
 
 input[type=text] {

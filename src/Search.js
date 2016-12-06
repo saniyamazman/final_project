@@ -11,6 +11,8 @@ import bg from './nyc.jpg';
 import './Search.css'
 import 'materialize-css';
 import React, {Component} from 'react';
+import TweetMap from './TweetMap'
+import RaisedButton from 'material-ui/RaisedButton';
 
 var sectionBg = {
 	  width: "100%",
@@ -21,19 +23,20 @@ var sectionBg = {
 
 	};
 
+
 class SearchBar extends Component {
-    constructor() {
-        super();
-        this.handleChange = this.handleChange.bind(this);
+    filter(event){
+    	event.preventDefault();
+    	console.log(event.target.value)
+    	let url = 'https://api.twitter.com/1.1/geo/search.json?query=' + event.target.value;
+    	console.log(url)
+
     }
 
-    handleChange() {
-        this.props.onUserInput(
-            this.refs['filterTextInput'].value
-        );
+    onClick(e){
+    	e.preventDefault();
+    	this.filter();
     }
-
-
 
 	render(){
 		return(
@@ -44,14 +47,14 @@ class SearchBar extends Component {
 	      			<h1> Where do you want to go?</h1>
 
 
-		      			<form className="row">
+		      			<form className="row" onSubmit={this.onClick}>
 						    <input
 							    type="text"
 							    name="search"
 							    placeholder="Type a city name..."
-							    onChange={this.handleChange}
+							    onChange={this.filter}
 						    />
-						    <button> explore</button>
+						    <RaisedButton className="submitbutton" label="Default" />
 						</form>
 	      		</div>
 	      		</section>

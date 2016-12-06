@@ -7,6 +7,7 @@ import TweetMap from './TweetMap'
 import LogInDashboard from './LogInDashboard';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {IndexRoute, Router, Route, hashHistory} from 'react-router';
+import 'materialize-css';
 
 
 ReactDOM.render(
