@@ -18,6 +18,7 @@ class App extends Component {
           </div>
         </nav>
         {this.props.children}
+        
       </div>
     );
   }
