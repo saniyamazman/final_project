@@ -7,54 +7,52 @@
 	will return json in the same format as sample_tweets.json
 */
 
-import bg from './nyc.jpg';
 import './Search.css'
-import 'materialize-css';
 import React, {Component} from 'react';
 import TweetMap from './TweetMap'
-import RaisedButton from 'material-ui/RaisedButton';
-
-var sectionBg = {
-	  width: "100%",
-	  height: "600px",
-	  opacity: "0.7",
-	  backgroundImage: "url(" + bg + ")",
-	  backgroundSize: "cover"
-
-	};
+import 'materialize-css';
+import $ from 'jquery'; 
 
 
-class SearchBar extends Component {
-    filter(event){
+
+var SearchBar = React.createClass( {
+	getInitialState:function(){
+		return ({setCity:[]});
+	},
+
+	searchedCity:function(city){
+		this.setState({citySearched:city.target.value})
+		console.log(this)
+	},
+
+    filter:function(event){
     	event.preventDefault();
     	console.log(event.target.value)
-    	let url = 'https://api.twitter.com/1.1/geo/search.json?query=' + event.target.value;
-    	console.log(url)
+    	let URL = 'https://api.twitter.com/1.1/geo/search.json?query=' + event.state.citySearched;
+    	$.getJSON(URL, function(data){
+    		this.setState({setCity:data.query.params})
+    	}.bind(this))
+    	console.log(URL)
 
-    }
-
-    onClick(e){
-    	e.preventDefault();
-    	this.filter();
-    }
+    },
 
 	render(){
 		return(
 			<div className="landing">
-				<section className="background" style={sectionBg}>
-				<div className="searchBar">
+				<section className="background">
+				<div className="searchBar" id="searchBar">
 					<h3>Find places where people go the most</h3>
 	      			<h1> Where do you want to go?</h1>
 
 
-		      			<form className="row" onSubmit={this.onClick}>
+		      			<form className="row" onSubmit={this.filter}>
 						    <input
 							    type="text"
 							    name="search"
 							    placeholder="Type a city name..."
-							    onChange={this.filter}
+							    onChange={this.searchedCity}
 						    />
-						    <RaisedButton className="submitbutton" label="Default" />
+						    <button type="submit" className="btn btn-primary">Log In</button>
 						</form>
 	      		</div>
 	      		</section>
@@ -63,6 +61,6 @@ class SearchBar extends Component {
 	}
 
 
-}
+})
 
 export default SearchBar;

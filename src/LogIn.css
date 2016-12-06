@@ -1,0 +1,40 @@
+h1{
+  font-size: 50px;
+  padding: 25px;
+}
+
+.form-group{
+  padding-bottom: 20px;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+#register{
+  float:left;
+  margin-left: -10%;
+  display: block;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  background:rgba(255,255,255,0.5);
+  padding-bottom: 5%;
+  padding-left: 13%;
+  padding-right: 13%;
+  border-radius: 50px;
+  align-items: center;
+}
+
+#login{
+  float:right;
+  margin-left: 20%;
+  margin-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 5%;
+  border-radius: 50px;
+  align-items: center;
+  background:rgba(255,255,255,0.5);
+}
+
+#registerbutton, #loginButton {
+  margin-left: -23%;
+  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}

@@ -15,16 +15,14 @@ class UserInfo extends Component {
     render() {
         return (
           <div className="userInfo">
-
+                <h1>User Information</h1>
+                <p>Information about the user will be displayed here.</p>
           </div>
         );
     }
 }
 
 /*
-- click logo to return to home page
-- should be covered by header code
-
 - display user photo
 - display name
 - display last location checked in
