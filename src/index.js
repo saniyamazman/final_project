@@ -9,6 +9,7 @@ import RegisterDashboard from './RegisterDashboard';
 import UserInfo from './UserInfo';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {IndexRoute, Router, Route, hashHistory} from 'react-router';
+import 'materialize-css';
 
 
 ReactDOM.render(

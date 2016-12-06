@@ -3,7 +3,7 @@ import logo from './logo.png';
 import './App.css';
 import { Link } from 'react-router';
 import '../node_modules/font-awesome/css/font-awesome.css'
-import 'materialize-css';
+
 
 
 class App extends Component {

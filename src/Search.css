@@ -15,10 +15,17 @@ h1 {
 	padding-top: 10px;
 }
 
-.searchBar{
-	width: 100%;
+#searchBar{
+	width: 60%;
 	position: absolute;
 	padding-top: 5%;
+	background:rgba(255,255,255,0.5);
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 5%;
+	border-radius: 50px;
+	padding-bottom: 5%;
+
 }
 
 .row{
@@ -30,10 +37,10 @@ input {
 }
 
 button {
-	margin-left: 25%;
+	margin-left: 42%;
 	margin-top: 2%;
-	margin-right: 25%;
-	width: 180px;
+	margin-right: 42%;
+	width: 16%;
 }
 
 input[type=text] {

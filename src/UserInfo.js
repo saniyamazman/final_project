@@ -26,10 +26,8 @@ class UserInfo extends Component {
 - display user photo
 - display name
 - display last location checked in
-
 - display saved locations (interested in)
 - display locations user has already visited
-
 */
 
 
