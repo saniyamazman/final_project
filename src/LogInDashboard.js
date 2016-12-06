@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { auth } from './auth'
 import bg from './nyc.jpg';
 import './App';
+import './LoginDashboard.css';
 
 export default class LogInDashboard extends Component {
   handleSubmit = (e) => {

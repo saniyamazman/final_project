@@ -16,6 +16,7 @@ class App extends Component {
             <Link className="h2"activeClassName='active' to="/home"><h2>TWIP</h2></Link>
             <Link className="link" activeClassName='active' to="/trips">MY TRIPS</Link>
             <Link className="link" activeClassName='active' to="/map">MAP DEMO</Link>
+            <Link className="link" activeClassName='active' to="/userinfo">USER INFO</Link>
           </div>
         </nav>
         {this.props.children}

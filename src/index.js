@@ -5,6 +5,7 @@ import './index.css';
 import SearchPage from './Search';
 import LogInDashboard from './LogInDashboard';
 import TweetMap from './TweetMap';
+import UserInfo from './UserInfo';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {IndexRoute, Router, Route, hashHistory} from 'react-router';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
 				<Route path="trips" component={LogInDashboard}/>
 				<Route path="home" component={SearchPage}/>
 				<Route path="map" component={TweetMap}/>
+                <Route path="userinfo" component={UserInfo}/>
 			</Route>
 		</Router>
 	</MuiThemeProvider>,
