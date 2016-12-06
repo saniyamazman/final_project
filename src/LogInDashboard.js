@@ -3,6 +3,7 @@ import { auth } from './auth'
 import bg from './nyc.jpg';
 import './App';
 import './LoginDashboard.css';
+import 'materialize-css';
 
 export default class LogInDashboard extends Component {
   handleSubmit = (e) => {
@@ -11,6 +12,7 @@ export default class LogInDashboard extends Component {
   }
   render () {
     return (
+      <div>
       <div className="col-sm-6 col-sm-offset-3">
         <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
@@ -24,6 +26,23 @@ export default class LogInDashboard extends Component {
           </div>
           <button type="submit" className="btn btn-primary">Register</button>
         </form>
+      </div>
+
+      <div className="col-sm-6 col-sm-offset-3">
+        <h1>Log In</h1>
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label>Email</label>
+            <input className="form-control" ref={(email) => this.email = email} placeholder="Email"/>
+          </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
+          </div>
+          <button type="submit" className="btn btn-primary">Log In</button>
+        </form>
+      </div>
+
       </div>
     )
   }

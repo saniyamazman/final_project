@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import SearchPage from './Search';
+import TweetMap from './TweetMap'
 import LogInDashboard from './LogInDashboard';
-import TweetMap from './TweetMap';
 import UserInfo from './UserInfo';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {IndexRoute, Router, Route, hashHistory} from 'react-router';

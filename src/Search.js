@@ -29,10 +29,11 @@ class SearchBar extends Component {
 
     handleChange() {
         this.props.onUserInput(
-            this.refs['filterTextInput'].value,
-            this.refs['inStockOnlyInput'].checked
+            this.refs['filterTextInput'].value
         );
     }
+
+
 
 	render(){
 		return(
@@ -41,6 +42,8 @@ class SearchBar extends Component {
 				<div className="searchBar">
 					<h3>Find places where people go the most</h3>
 	      			<h1> Where do you want to go?</h1>
+
+
 		      			<form className="row">
 						    <input
 							    type="text"
@@ -48,7 +51,7 @@ class SearchBar extends Component {
 							    placeholder="Type a city name..."
 							    onChange={this.handleChange}
 						    />
-						    <button> EXPLORE</button>
+						    <button> explore</button>
 						</form>
 	      		</div>
 	      		</section>
@@ -56,5 +59,7 @@ class SearchBar extends Component {
 		)
 	}
 
+
 }
+
 export default SearchBar;
