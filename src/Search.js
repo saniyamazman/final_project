@@ -28,11 +28,11 @@ var SearchBar = React.createClass( {
     filter:function(event){
     	event.preventDefault();
     	console.log(event.target.value)
-    	let URL = 'https://api.twitter.com/1.1/geo/search.json?query=' + event.state.citySearched;
-    	$.getJSON(URL, function(data){
-    		this.setState({setCity:data.query.params})
+    	let url = 'https://api.twitter.com/1.1/geo/search.json?query=' + this.state.citySearched;
+    	console.log(url)
+    	$.get(url).then(function(data){
+    		this.setState({setCity:data.query.place_id})
     	}.bind(this))
-    	console.log(URL)
 
     },
 
@@ -43,8 +43,6 @@ var SearchBar = React.createClass( {
 				<div className="searchBar" id="searchBar">
 					<h3>Find places where people go the most</h3>
 	      			<h1> Where do you want to go?</h1>
-
-
 		      			<form className="row" onSubmit={this.filter}>
 						    <input
 							    type="text"
@@ -52,10 +50,14 @@ var SearchBar = React.createClass( {
 							    placeholder="Type a city name..."
 							    onChange={this.searchedCity}
 						    />
-						    <button type="submit" className="btn btn-primary">Log In</button>
+						    <button type="submit" className="btn btn-primary">Explore</button>
 						</form>
 	      		</div>
+	      		<div id="appendMap">
+	      			<TweetMap />
+	      		</div>
 	      		</section>
+	      		
 	      	</div>
 		)
 	}
