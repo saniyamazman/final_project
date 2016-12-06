@@ -2,7 +2,7 @@ import './TweetMap.css';
 import 'materialize-css';
 import React, {PropTypes, Component} from 'react';
 import GoogleMap from 'google-map-react';
-
+import TweetMarker from './TweetMarker.js'
 const API_KEY = 'AIzaSyCaQka1I7iRAcB9hlZf9aeRoXbSE37c6Vk';
 
 export default class TweetMap extends Component {
@@ -19,6 +19,7 @@ export default class TweetMap extends Component {
         }}
         defaultCenter = {this.props.center}
         defaultZoom = {this.props.zoom}>
+        <TweetMarker lat={43.1400} lng={-79.1205} text={'T'}/>
         </GoogleMap>
       </div>
     )
