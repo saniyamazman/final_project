@@ -1,4 +1,12 @@
 //need twitter api to be able to search for a place
+/*Flow for retrieving place_ids and then tweets from Twitter:
+	GET https://api.twitter.com/1.1/geo/search.json?query=Seattle
+	can also use lat long for improved accuracy
+	once we have our place_ids
+	GET https://api.twitter.com/1.1/search/tweets.json?q=place%'place_id'
+	will return json in the same format as sample_tweets.json
+*/
+
 import bg from './nyc.jpg';
 import './Search.css'
 import 'materialize-css';
@@ -34,11 +42,11 @@ class SearchBar extends Component {
 					<h3>Find places where people go the most</h3>
 	      			<h1> Where do you want to go?</h1>
 		      			<form className="row">
-						    <input 
-							    type="text" 
-							    name="search" 
+						    <input
+							    type="text"
+							    name="search"
 							    placeholder="Type a city name..."
-							    onChange={this.handleChange} 
+							    onChange={this.handleChange}
 						    />
 						    <button> EXPLORE</button>
 						</form>

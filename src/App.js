@@ -15,6 +15,7 @@ class App extends Component {
             <Link activeClassName='active' to="/home"><img src={logo} className="App-logo" alt="logo" /></Link>
             <Link className="h2"activeClassName='active' to="/home"><h2>TWIP</h2></Link>
             <Link className="link" activeClassName='active' to="/trips">MY TRIPS</Link>
+            <Link className="link" activeClassName='active' to="/map">MAP DEMO</Link>
           </div>
         </nav>
         {this.props.children}
