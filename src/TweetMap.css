@@ -1,4 +1,8 @@
 .map-div {
-  height: 600px;
-  width: fill;
+  height: 500px;
+  width: 80%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }

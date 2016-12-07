@@ -7,59 +7,62 @@
 	will return json in the same format as sample_tweets.json
 */
 
-import bg from './nyc.jpg';
 import './Search.css'
-import 'materialize-css';
 import React, {Component} from 'react';
-
-var sectionBg = {
-	  width: "100%",
-	  height: "600px",
-	  opacity: "0.7",
-	  backgroundImage: "url(" + bg + ")",
-	  backgroundSize: "cover"
-
-	};
-
-class SearchBar extends Component {
-    constructor() {
-        super();
-        this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleChange() {
-        this.props.onUserInput(
-            this.refs['filterTextInput'].value
-        );
-    }
+import TweetMap from './TweetMap'
+import 'materialize-css';
+import $ from 'jquery';
 
 
+
+var SearchBar = React.createClass( {
+	getInitialState:function(){
+		return ({setCity:[]});
+	},
+
+	searchedCity:function(city){
+		this.setState({citySearched:city.target.value})
+		console.log(this)
+	},
+
+    filter:function(event){
+    	event.preventDefault();
+    	console.log(event.target.value)
+    	let url = 'https://api.twitter.com/1.1/geo/search.json?query=' + this.state.citySearched;
+    	console.log(url)
+    	$.get(url).then(function(data){
+    		this.setState({setCity:data.query.place_id})
+    	}.bind(this))
+
+    },
 
 	render(){
 		return(
 			<div className="landing">
-				<section className="background" style={sectionBg}>
-				<div className="searchBar">
+				<section className="background">
+				<div className="searchBar" id="searchBar">
 					<h3>Find places where people go the most</h3>
 	      			<h1> Where do you want to go?</h1>
-
-
-		      			<form className="row">
+		      			<form className="row" onSubmit={this.filter}>
 						    <input
 							    type="text"
 							    name="search"
 							    placeholder="Type a city name..."
-							    onChange={this.handleChange}
+							    onChange={this.searchedCity}
 						    />
-						    <button> explore</button>
+						    <button type="submit" className="btn btn-primary">Explore</button>
 						</form>
 	      		</div>
+	      		<div id="appendMap">
+	      			<TweetMap />
+	      		</div>
 	      		</section>
+
 	      	</div>
 		)
 	}
 
 
-}
+})
 
 export default SearchBar;
