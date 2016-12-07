@@ -9,7 +9,7 @@ var AUTH_TOKEN;
 
 class App extends Component {
   componentDidMount() {
-    var R = require("request");
+    /*var R = require("request");
     var key = "ologgyDnK6430Hv8JzFBaWmAz";
     var secret = "x95BCi9OXNvWllEvPrqX8DdCXbGvT4SDGUldNJmVTvT1Xea7Px";
     var cat = key + ":" + secret;
@@ -24,7 +24,7 @@ class App extends Component {
         body: "grant_type=client_credentials"
       }, function(err, resp, body) {
         console.dir(body);
-    });
+    });*/
   };
   render() {
 
