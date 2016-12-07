@@ -20,6 +20,7 @@ export default class TweetMap extends Component {
         defaultCenter = {this.props.center}
         defaultZoom = {this.props.zoom}>
         <TweetMarker lat={43.1400} lng={-79.1205} text={'T'}/>
+        <TweetMarker lat={43.1380} lng={-79.1005} text={'T'}/>
         </GoogleMap>
       </div>
     )
