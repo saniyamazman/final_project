@@ -12,11 +12,12 @@ h4 {
     padding: 0px 25px 15px 25px;
 }
 
-img {
-    height: 100px;
+.profileimage {
+    height: 100px !important;
     border-radius: 10px;
     float: left;
     margin-right: 10px;
+    margin-top: 20px;
 }
 
 h1 {
@@ -27,13 +28,21 @@ h1 {
     height: 50px;
 }
 
+div {
+    font-family: "Roboto", sans-serif;
+}
+
 .name {
     font-size: 40px;
-    font-family: "Roboto", sans-serif;
 }
 
 .screenname {
     font-size: 30px;
-    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.location {
+    font-size: 20px;
+    margin-left: 110px;
     font-weight: 300;
 }

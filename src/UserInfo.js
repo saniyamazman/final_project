@@ -3,6 +3,7 @@ import './App.css';
 import './UserInfo.css';
 import $ from 'jquery';
 import axios from 'axios';
+import {ref, config} from './config.js';
 
 // Public user information page
 
@@ -10,10 +11,11 @@ var UserCard = React.createClass({
     render() {
         return(
             <div className="userCard">
-                <img src={this.props.data.profile_image_url} />
+                <img src={this.props.data.profile_image_url} className="profileimage"/>
                 <div className="name">{this.props.data.name}</div>
                 <div className="screenname">@{this.props.data.screen_name}</div>
-                <h3>Current Location: {this.props.data.location}</h3>
+                <div className="location">Current Location: {this.props.data.location}</div>
+                <div className="trips">Planned trips:</div>
             </div>
         );
     }
@@ -30,7 +32,7 @@ var UserInfo = React.createClass({
     
     componentDidMount() {
        
-        var screenname = 'uw'; // this needs to be changed depending on the user
+        var screenname = 'uw_ischool'; // this needs to be changed depending on the user
         var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + screenname + '&count=1';
         
         $.get(url).then(function(data) {
