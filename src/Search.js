@@ -13,6 +13,8 @@ import TweetMap from './TweetMap'
 import 'materialize-css';
 import $ from 'jquery'; 
 import './TweetMap.css'
+import { Link } from 'react-router';
+
 
 
 
@@ -20,7 +22,9 @@ var SearchBar = React.createClass( {
 	getInitialState:function(){
 		return ({setCity:[]});
 	},
-
+	logIn: function(){
+	console.log('Button was clicked!')
+	},
 	searchedCity:function(city){
 		this.setState({citySearched:city.target.value})
 		console.log(this)
@@ -52,13 +56,17 @@ var SearchBar = React.createClass( {
 							    onChange={this.searchedCity}
 						    />
 						    <button type="submit" className="btn btn-primary">Explore</button>
+						    	<div className="loginstuff">
+									<Link className="loginlink" activeClassName='active' to="/trips">LOG IN</Link>
+								</div>
 						</form>
+						
 	      		</div>
 	      		<div id="appendMap">
 	      			<TweetMap />
 	      		</div>
 	      		</section>
-	      		
+
 	      	</div>
 		)
 	}

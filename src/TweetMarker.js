@@ -6,7 +6,8 @@ import {TweetMarkerStyle, TweetMarkerStyleHover} from './TweetMarkerStyle.js'
 export default class TweetMarker extends Component {
   static propTypes = {
     text: PropTypes.string,
-    hover: PropTypes.bool
+    hover: PropTypes.bool,
+    key: PropTypes.int
   };
 
   static defaultProps = {};

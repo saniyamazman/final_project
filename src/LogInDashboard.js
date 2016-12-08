@@ -14,7 +14,6 @@ export default class LogInDashboard extends Component {
   }
 
 
-
   render () {
     return (
 
@@ -32,10 +31,13 @@ export default class LogInDashboard extends Component {
                   <div id ="loginButton">
                   <button type="submit" className="btn btn-primary">Log In</button>
                   </div>
+                  <div id = "registerButton">
+                  <button onClick={this.props.register} className="btn btn-primary"> Register </button>
+                   </div>
                 </form>
                 </div>
 
-    
+
     )
   }
 }
