@@ -1,9 +1,14 @@
 import { ref, firebaseAuth } from './config'
 
-export function auth (email, pw) {
+export function auth (email, pw, username) {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(saveUser)
-    .catch((error) => console.log('Somethings off, try Again!', error))
+    .then(function (user) {
+        user.updateProfile({
+            username: username
+        })  
+    })
+    .catch((error) => console.log('Something\'s off, try Again!', error))
 }
 
 export function logout () {

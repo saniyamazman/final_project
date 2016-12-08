@@ -21,7 +21,13 @@ ReactDOM.render(
 				<Route path="register" component={RegisterDashboard}/>
 				<Route path="home" component={SearchPage}/>
 				<Route path="map" component={TweetMap}/>
+<<<<<<< HEAD
                 <Route path="userinfo" component={UserInfo}/>
+=======
+
+        <Route path="userinfo" component={UserInfo}/>
+				<Route path="logIn" component = {LogInDashboard}/>
+>>>>>>> 1b7f9e5616e6232276524475cf728aa52c068f63
 			</Route>
 		</Router>
 	</MuiThemeProvider>,
