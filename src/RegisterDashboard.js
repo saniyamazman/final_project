@@ -12,6 +12,7 @@ export default class LogInDashboard extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     auth(this.email.value, this.pw.value)
+
   }
 
     render () {
@@ -29,7 +30,7 @@ export default class LogInDashboard extends Component {
               <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
             </div>
             <div id = "registerbutton">
-            <button type="submit"   className="btn btn-primary">Register</button>
+            <Link to="/map"> <button type="submit"   className="btn btn-primary">  Register  </button> </Link>
             </div>
           </form>
         </div>
