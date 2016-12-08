@@ -40,8 +40,21 @@ nav {
 
 }
 
+@media screen and (min-width: 675px) and (max-width: 750px){
+  .link{
+    padding-right: 80px;
+    float: right;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: white;
+  }
 
-@media screen and (max-width: 650px){
+
+}
+
+@media screen and (max-width: 675px){
   .link{
     padding-right: 10px;
     float: right;
