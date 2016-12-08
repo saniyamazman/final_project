@@ -1,8 +1,39 @@
-.profileImage {
-    background-size: cover;
+h4 {
+    text-align: center;
+}
+
+.userInfo {
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+    padding: 0px 25px 15px 25px;
+}
+
+img {
+    height: 100px;
+    border-radius: 10px;
+    float: left;
+    margin-right: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.profileimage {
     height: 50px;
 }
 
-h4 {
-    text-align: center;
+.name {
+    font-size: 40px;
+    font-family: "Roboto", sans-serif;
+}
+
+.screenname {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
 }
