@@ -7,7 +7,7 @@ export default class TweetMarker extends Component {
   static propTypes = {
     text: PropTypes.string,
     hover: PropTypes.bool,
-    key: PropTypes.int
+    tweetUrl: PropTypes.string
   };
 
   static defaultProps = {};
@@ -15,14 +15,12 @@ export default class TweetMarker extends Component {
   constructor(props) {
     super(props);
   }
-  /*<div style={{width : 80}} className="hint_content">
-    {this.props.text}
-  </div>*/
+
   render() {
-    const style = this.props.hover ? TweetMarkerStyleHover : TweetMarkerStyle;
+    const style = this.props.$hover ? TweetMarkerStyleHover : TweetMarkerStyle;
     return (
       <div style={style}>
-        <div>T</div>
+        <a href={this.props.tweetUrl} target="_blank">T</a>
 
       </div>
     );
