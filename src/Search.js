@@ -27,17 +27,19 @@ var SearchBar = React.createClass( {
 	getInitialState:function(){
 		return ({setCity:[]});
 	},
+
 	logIn: function(){
 	console.log('Button was clicked!')
 	},
+
 	searchedCity:function(city){
-		this.setState({citySearched:city.target.value})
+		this.setState({setCity:city.target.value})
 		console.log(this)
 	},
 
     filter:function(event){
     	event.preventDefault();
-    	let url = urlBeg + this.state.citySearched + urlEnd;
+    	let url = urlBeg + this.state.setCity + urlEnd;
     	console.log(url)
     	$.getJSON(url).then(function(data){
     		lat = data.resourceSets[0].resources[0].geocodePoints[0].coordinates[0];
@@ -53,9 +55,6 @@ var SearchBar = React.createClass( {
     		this.setState({setCity:data.statuses})
     		})
     	}.bind(this))
-    	
-    	// var getThis = gettingInfo + this.props.data.resourceSets + gettingInfoEnd;
-    	// console.log(getThis)
     },
 
 	render(){
@@ -73,6 +72,7 @@ var SearchBar = React.createClass( {
 							    name="search"
 							    placeholder="Type a city name..."
 							    onChange={this.searchedCity}
+							    
 						    />
 						    <button type="submit" className="btn btn-primary">Explore</button>
 						    	<div className="loginstuff">
@@ -82,7 +82,7 @@ var SearchBar = React.createClass( {
 						
 	      		</div>
 	      		<div id="appendMap">
-	      			<TweetMap center={points} data={tweets}/>
+	      			<TweetMap />
 	      		</div>
 	      		</section>
 
