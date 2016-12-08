@@ -19,7 +19,9 @@ var SearchBar = React.createClass( {
 	getInitialState:function(){
 		return ({setCity:[]});
 	},
-
+	logIn: function(){
+	console.log('Button was clicked!')
+	},
 	searchedCity:function(city){
 		this.setState({citySearched:city.target.value})
 		console.log(this)
@@ -51,6 +53,7 @@ var SearchBar = React.createClass( {
 							    onChange={this.searchedCity}
 						    />
 						    <button type="submit" className="btn btn-primary">Explore</button>
+								<button onClick={this.logIn()} type="submit" className="btn btn-primary">Log In</button>
 						</form>
 	      		</div>
 	      		<div id="appendMap">
