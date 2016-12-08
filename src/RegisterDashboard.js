@@ -11,7 +11,7 @@ import './LogIn.css';
 export default class LogInDashboard extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
-    auth(this.email.value, this.pw.value)
+    auth(this.email.value, this.pw.value, this.username.value)
 
   }
 
@@ -24,6 +24,10 @@ export default class LogInDashboard extends Component {
             <div className="form-group">
               <label>Email</label>
               <input className="form-control" ref={(email) => this.email = email} placeholder="Email"/>
+            </div>
+            <div className="form-group">
+              <label>Twitter Username</label>
+              <input className="form-control" ref={(username) => this.username = username} placeholder="Twitter Username"/>
             </div>
             <div className="form-group">
               <label>Password</label>
