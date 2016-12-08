@@ -2,20 +2,20 @@ import React from 'react';
 import './App.css';
 import './UserInfo.css';
 import $ from 'jquery';
-import axios from 'axios';
-import {ref, config} from './config.js';
-
-// Public user information page
+// import {ref, config} from './config.js';
 
 var UserCard = React.createClass({  
     render() {
         return(
             <div className="userCard">
-                <img src={this.props.data.profile_image_url} className="profileimage"/>
+                <img src={this.props.data.profile_image_url} className="profileimage" alt="user's avatar"/>
                 <div className="name">{this.props.data.name}</div>
                 <div className="screenname">@{this.props.data.screen_name}</div>
                 <div className="location">Current Location: {this.props.data.location}</div>
-                <div className="trips">Planned trips:</div>
+                <div className="trips">
+                    <b>Planned trips:</b>
+                    
+                </div>
             </div>
         );
     }
@@ -31,18 +31,14 @@ var UserInfo = React.createClass({
     },
     
     componentDidMount() {
-       
-        var screenname = 'uw_ischool'; // this needs to be changed depending on the user
+        var screenname = 'uw'; // this needs to be changed depending on the user
         var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + screenname + '&count=1';
-        
         $.get(url).then(function(data) {
-            var user = data[0].user;
             this.setState({
                userInfo: data[0].user
             });
         }.bind(this));
     },
-    
     
     render:function() {
         return (
@@ -52,7 +48,6 @@ var UserInfo = React.createClass({
           </div>
         );
     }
-    
 });
 
 
