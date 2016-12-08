@@ -32,8 +32,8 @@ export default class LogInDashboard extends Component {
                   <div id ="loginButton">
                   <button type="submit" className="btn btn-primary">Log In</button>
                   </div>
-                  <div className="register">
-									<Link className="registerLink" activeClassName='active' to="/register">Register</Link>
+                  <div className="registerstuff">
+									<Link className="registerlink" activeClassName='active' to="/register">Register</Link>
 								</div>
                 </form>
                 </div>
