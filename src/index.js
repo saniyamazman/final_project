@@ -22,9 +22,7 @@ ReactDOM.render(
 				<Route path="home" component={SearchPage}/>
 				<Route path="map" component={TweetMap}/>
                 <Route path="userinfo" component={UserInfo}/>
-
-        <Route path="userinfo" component={UserInfo}/>
-				<Route path="logIn" component = {LogInDashboard}/>
+				<Route path="logIn" component={LogInDashboard}/>
 			</Route>
 		</Router>
 	</MuiThemeProvider>,
