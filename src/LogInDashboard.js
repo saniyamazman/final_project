@@ -17,8 +17,7 @@ export default class LogInDashboard extends Component {
 
   render () {
     return (
-
-            <div id = "login">
+            <div id="login">
                 <h1>Log In</h1>
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
@@ -29,7 +28,7 @@ export default class LogInDashboard extends Component {
                     <label>Password</label>
                     <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
                   </div>
-                  <div id ="loginButton">
+                  <div id="loginButton">
                   <button type="submit" className="btn btn-primary">Log In</button>
                   </div>
                   <div className="registerstuff">

@@ -32,15 +32,14 @@ export default class TweetMap extends Component {
     let tweetDat = this.props.data;
     console.log(tweetDat);
     return (
-      <div className ='map-div'>
-      <GoogleMap bootStrapURLKeys = {{
+      <div className='map-div'>
+      <GoogleMap bootStrapURLKeys={{
           key: API_KEY,
           language: 'en'
         }}
-        center = {this.props.center}
-        zoom = {this.props.zoom}
-        onChildClick = {this._onChildClick}
-        >
+        defaultCenter={this.props.center}
+        defaultZoom={this.props.zoom}
+        onChildClick={this._onChildClick}
         {tweetDat.map(function(item, index) {
           console.log(index);
           var tweetLat;
