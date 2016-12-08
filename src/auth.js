@@ -8,7 +8,7 @@ export function auth (email, pw, username) {
             username: username
         })  
     })
-    .catch((error) => console.log('Something\'s off, try Again!', error))
+    .catch((error) => console.log('Something\'s off, try again!', error))
 }
 
 export function logout () {
