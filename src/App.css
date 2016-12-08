@@ -28,7 +28,7 @@ font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;  fl
   color: white;
 }
 
-
+@media screen and (min-width: 800px){
 .link {
   padding-right: 100px;
   float: right;
@@ -39,4 +39,5 @@ font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;  fl
   margin-top: 74px;
   text-decoration: none;
   color: white;
+}
 }
