@@ -30,7 +30,7 @@ export default class LogInDashboard extends Component {
               <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
             </div>
             <div id = "registerbutton">
-            <Link to="/map"> <button type="submit"   className="btn btn-primary">  Register  </button> </Link>
+            <button type="submit"   className="btn btn-primary">  Register  </button> 
             </div>
           </form>
         </div>
