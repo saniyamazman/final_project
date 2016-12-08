@@ -37,9 +37,10 @@ export default class TweetMap extends Component {
           key: API_KEY,
           language: 'en'
         }}
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
+       center= {this.props.center}
+        zoom={this.props.zoom}
         onChildClick={this._onChildClick}
+        >
         {tweetDat.map(function(item, index) {
           console.log(index);
           var tweetLat;

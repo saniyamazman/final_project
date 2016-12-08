@@ -34,6 +34,9 @@ export default class LogInDashboard extends Component {
                   <div className="registerstuff">
 									<Link className="registerlink" activeClassName='active' to="/register">Register</Link>
 								</div>
+                <div className="tempButton">
+                <Link className="tempButton" activeClassName='active' to="/search">Temp Button To Search</Link>
+              </div>
                 </form>
                 </div>
 
