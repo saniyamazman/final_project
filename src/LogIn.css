@@ -37,3 +37,19 @@ h1{
   margin-left: -23%;
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
+
+.registerstuff{
+	margin-left: 42%;
+	margin-top: 2%;
+	margin-right: 42%;
+	width: 16%;
+	background-color: #4Db6AC;
+	padding: 7px;
+
+}
+.registerlink{
+	padding-left: 35%;
+	padding-top: 15px;
+	font-size: 15px;
+	color: white;
+}
