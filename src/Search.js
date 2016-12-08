@@ -12,6 +12,7 @@ import React, {Component} from 'react';
 import TweetMap from './TweetMap'
 import 'materialize-css';
 import $ from 'jquery'; 
+import './TweetMap.css'
 
 
 
@@ -27,7 +28,7 @@ var SearchBar = React.createClass( {
 
     filter:function(event){
     	event.preventDefault();
-    	console.log(event.target.value)
+    	// console.log(event.target.value)
     	let url = 'https://api.twitter.com/1.1/geo/search.json?query=' + this.state.citySearched;
     	console.log(url)
     	$.get(url).then(function(data){
