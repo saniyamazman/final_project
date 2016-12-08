@@ -8,7 +8,7 @@
 */
 
 import './Search.css'
-import React, {Component} from 'react';
+import React, {Component, ReactDOM} from 'react';
 import TweetMap from './TweetMap'
 import $ from 'jquery';
 import 'materialize-css';
@@ -20,8 +20,8 @@ const urlBeg = 'http://dev.virtualearth.net/REST/v1/Locations?q=';
 const urlEnd = '&o=json&key=Amqe7a8IucLou-06ttFQ1Re67VAFp9Zx5vbeIsiDqZv8CWC5qAk9kY0tNhNZs5vW&jsonp=?'
 const gettingInfo = 'https://faculty.washington.edu/joelross/proxy/twitter/search/?q=&geocode='
 const gettingInfoEnd = ',3km&result_type=recent'
-var lat;
-var long;
+var lat = 47.6500;
+var long = -122.3035;
 
 var SearchBar = React.createClass( {
 	getInitialState:function(){
@@ -31,13 +31,15 @@ var SearchBar = React.createClass( {
 	console.log('Button was clicked!')
 	},
 	searchedCity:function(city){
-		this.setState({citySearched:city.target.value})
+		//let searchString = ReactDOM.findDOMNode(this.refs.citySearch).value.trim();
+		this.setState({citySearched: city.target.value})
 		console.log(this)
 	},
 
     filter:function(event){
     	event.preventDefault();
-    	let url = urlBeg + this.state.citySearched + urlEnd;
+			var formattedCity = this.state.citySearched.replace(" ", "%20");
+			let url = urlBeg + this.state.citySearched + urlEnd;
     	console.log(url)
     	$.getJSON(url).then(function(data){
     		lat = data.resourceSets[0].resources[0].geocodePoints[0].coordinates[0];
@@ -52,15 +54,16 @@ var SearchBar = React.createClass( {
     		console.log(data)
     		this.setState({setCity:data.statuses})
     		})
+				this.forceUpdate();
     	}.bind(this))
-    	
     	// var getThis = gettingInfo + this.props.data.resourceSets + gettingInfoEnd;
     	// console.log(getThis)
     },
 
 	render(){
 		let tweets = this.state.setCity;
-		let points = {lat:{lat}, lng:{long}};
+		let points = {lat:lat, lng:long};
+		let map_info = [{a:{tweets}, b:{points}}];
 		return(
 			<div className="landing">
 				<section className="background">
@@ -69,21 +72,24 @@ var SearchBar = React.createClass( {
 	      			<h1> Where do you want to go?</h1>
 		      			<form className="row" onSubmit={this.filter}>
 						    <input
-							    type="text"
+
+									type="text"
 							    name="search"
 							    placeholder="Type a city name..."
-							    onChange={this.searchedCity}
+									onChange={this.searchedCity}
 						    />
 						    <button type="submit" className="btn btn-primary">Explore</button>
 						    	<div className="loginstuff">
 									<Link className="loginlink" activeClassName='active' to="/trips">LOG IN</Link>
 								</div>
 						</form>
-						
+
 	      		</div>
 	      		<div id="appendMap">
-	      			<TweetMap center={points} data={tweets}/>
-	      		</div>
+
+								<TweetMap center={points}/>
+
+						</div>
 	      		</section>
 
 	      	</div>

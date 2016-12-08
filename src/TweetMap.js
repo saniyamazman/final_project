@@ -5,7 +5,7 @@ import GoogleMap from 'google-map-react';
 import TweetMarker from './TweetMarker.js';
 import controllable from 'react-controllables';
 import {K_SIZE} from './TweetMarkerStyle.js';
-const API_KEY = 'AIzaSyCaQka1I7iRAcB9hlZf9aeRoXbSE37c6Vk';
+const API_KEY = 'AIzaSyBD-pYp4i3hhI5VRJOQrjKeTxhbR5AUnEU';
 
 var tweets = require('../data/sample_tweets_with_loc.json');
 
@@ -15,7 +15,7 @@ function getRandomArbitrary(min, max) {
 
 export default class TweetMap extends Component {
   static defaultProps = {
-    center: {lat: 47.6475, lng: -122.3223},
+
     zoom:12,
     data: tweets['statuses']
   };
@@ -26,9 +26,8 @@ export default class TweetMap extends Component {
 
   render() {
 
-    //console.log(this.props.data);
     let tweetDat = this.props.data;
-
+    console.log(tweetDat);
     return (
       <div className='map-div'>
       <GoogleMap bootStrapURLKeys={{
@@ -38,7 +37,6 @@ export default class TweetMap extends Component {
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
         onChildClick={this._onChildClick}
-        >
         {tweetDat.map(function(item, index) {
           var tweetLat;
           var tweetLng;
