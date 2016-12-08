@@ -19,7 +19,7 @@ import { Link } from 'react-router';
 const urlBeg = 'http://dev.virtualearth.net/REST/v1/Locations?q=';
 const urlEnd = '&o=json&key=Amqe7a8IucLou-06ttFQ1Re67VAFp9Zx5vbeIsiDqZv8CWC5qAk9kY0tNhNZs5vW&jsonp=?'
 const gettingInfo = 'https://faculty.washington.edu/joelross/proxy/twitter/search/?q=&geocode='
-const gettingInfoEnd = ',3km&result_type=recent'
+const gettingInfoEnd = ',1.5km&result_type=recent'
 var lat = 47.6500;
 var long = -122.3035;
 
@@ -48,22 +48,27 @@ var SearchBar = React.createClass( {
     		console.log(long)
 
 
-    	let secondUrl = gettingInfo + lat + ',' +long  + gettingInfoEnd;
-    	console.log(secondUrl)
-    	$.getJSON(secondUrl).then(function(data){
-    		console.log(data)
-    		this.setState({setCity:data.statuses})
-    		})
-				this.forceUpdate();
+	    	let secondUrl = gettingInfo + lat + ',' +long  + gettingInfoEnd;
+	    	console.log(secondUrl)
+	    	$.getJSON(secondUrl).then(function(data){
+	    		console.log(data)
+					this.setState({setCity:data.statuses})
+
+				}.bind(this))
+				//this.forceUpdate();
+
     	}.bind(this))
     	// var getThis = gettingInfo + this.props.data.resourceSets + gettingInfoEnd;
     	// console.log(getThis)
-    },
+
+
+		},
 
 	render(){
 		let tweets = this.state.setCity;
 		let points = {lat:lat, lng:long};
 		let map_info = [{a:{tweets}, b:{points}}];
+		console.log(tweets);
 		return(
 			<div className="landing">
 				<section className="background">
@@ -87,7 +92,7 @@ var SearchBar = React.createClass( {
 	      		</div>
 	      		<div id="appendMap">
 
-								<TweetMap center={points}/>
+								<TweetMap center={points} data={tweets}/>
 
 						</div>
 	      		</section>
