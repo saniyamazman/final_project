@@ -21,7 +21,6 @@ ReactDOM.render(
 				<Route path="register" component={RegisterDashboard}/>
 				<Route path="home" component={SearchPage}/>
 				<Route path="map" component={TweetMap}/>
-
                 <Route path="userinfo" component={UserInfo}/>
 			</Route>
 		</Router>
