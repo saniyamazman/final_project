@@ -11,6 +11,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {IndexRoute, Router, Route, hashHistory} from 'react-router';
 
 
+
 ReactDOM.render(
 	<MuiThemeProvider>
 		<Router history={hashHistory}>
