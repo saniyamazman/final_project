@@ -16,10 +16,10 @@ ReactDOM.render(
 	<MuiThemeProvider>
 		<Router history={hashHistory}>
 			<Route path="/" component={App}>
-				<IndexRoute component={SearchPage}/>
+				<IndexRoute component={LogInDashboard}/>
 				<Route path="trips" component={LogInDashboard}/>
 				<Route path="register" component={RegisterDashboard}/>
-				<Route path="home" component={SearchPage}/>
+				<Route path="search" component={SearchPage}/>
                 <Route path="userinfo" component={UserInfo}/>
 				<Route path="logIn" component={LogInDashboard}/>
 			</Route>

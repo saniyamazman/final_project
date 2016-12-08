@@ -79,8 +79,10 @@ var SearchBar = React.createClass( {
 			<div className="landing">
 				<section className="background">
 				<div className="searchBar" id="searchBar">
-	      			<h1>Find Tweets by city</h1>
+	      			<h1>SEARCH FOR A CITY</h1>
 		      			<form className="row" onSubmit={this.filter}>
+						    
+		      			<div className="form-group">
 						    <input
 
 									type="text"
@@ -90,6 +92,7 @@ var SearchBar = React.createClass( {
 							    
 									onChange={this.searchedCity}
 						    />
+						    </div>
 						    <button type="submit" className="btn btn-primary">Explore</button>
 						</form>
 

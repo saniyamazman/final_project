@@ -5,7 +5,8 @@ h1{
 
 .form-group{
   padding-bottom: 20px;
-  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-weight: 200;
+  color: white;
 }
 #register{
 	width: 60%;
@@ -31,25 +32,33 @@ h1{
 	margin-top: 5%;
 	border-radius: 50px;
 	padding-bottom: 5%;
+	margin-bottom: 20%;
 }
 
-#registerbutton, #loginButton {
-  margin-left: -23%;
-  font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-}
 
-.registerstuff{
-	margin-left: 42%;
-	margin-top: 2%;
-	margin-right: 42%;
-	width: 16%;
-	background-color: #4Db6AC;
-	padding: 7px;
-
-}
 .registerlink{
 	padding-left: 35%;
 	padding-top: 15px;
 	font-size: 15px;
 	color: white;
+}
+
+button {
+	margin-left: 42%;
+	margin-top: 2%;
+	margin-right: 42%;
+	width: 16%;
+}
+
+.btn, .btn-large{
+	background-color: grey;
+	width: 16%;
+}
+
+.btn:hover, .btn-large:hover{
+	background-color: #6699FF;
+}
+
+input {
+	border-bottom: 1px solid red;
 }
