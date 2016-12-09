@@ -14,9 +14,15 @@ export default class LogInDashboard extends Component {
     login(this.email.value, this.pw.value)
   }
 
-
   render () {
     return (
+      <div>
+      <div id = "thing">
+      <div id = "about">
+        Twip is an application that allows you to view all of the most recent geotagged tweets from
+        any city of your choice!
+        </div>
+      </div>
             <div id="login">
                 <h1>Log In</h1>
                 <form onSubmit={this.handleSubmit}>
@@ -32,7 +38,7 @@ export default class LogInDashboard extends Component {
                   <button type="submit" className="btn btn-primary">Log In</button>
                   </div>
                   <div className="registerstuff">
-									<Link className="tempButton" activeClassName='active' to="/register">Register</Link>
+									<Link className="tempButton" activeClassName='active' to="/register">Don't have an account? Register </Link>
 								</div>
                 <div className="tempButton">
                 <Link className="tempButton" activeClassName='active' to="/search">Temp Button To Search</Link>
@@ -40,7 +46,7 @@ export default class LogInDashboard extends Component {
                 </form>
                 </div>
 
-
+</div>
     )
   }
 }

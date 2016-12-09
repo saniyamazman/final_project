@@ -21,6 +21,23 @@ h1{
 	padding-bottom: 5%;
 }
 
+#thing{
+  width: 60%;
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  background:rgba(255,255,255,0.5);
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 3%;
+  border-radius: 50px;
+  padding-bottom: 1%;
+}
+#about{
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-weight: 200;
+}
+
 #login{
   width: 60%;
 	padding-top: 2%;
@@ -29,7 +46,7 @@ h1{
 	background:rgba(255,255,255,0.5);
 	margin-left: 20%;
 	margin-right: 20%;
-	margin-top: 5%;
+	margin-top: 2%;
 	border-radius: 50px;
 	padding-bottom: 5%;
 	margin-bottom: 20%;

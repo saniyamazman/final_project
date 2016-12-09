@@ -3,9 +3,9 @@ import './App.css';
 import './UserInfo.css';
 import $ from 'jquery';
 import {ref, config, firebaseAuth} from './config.js';
-import {logout} from './auth.js';
+import { logout } from './auth';
 
-var UserCard = React.createClass({  
+var UserCard = React.createClass({
     render() {
         return(
             <div className="userCard">
@@ -20,13 +20,13 @@ var UserCard = React.createClass({
 
 
 var UserInfo = React.createClass({
-    
+
     getInitialState() {
         return ({
             userInfo: {}
         })
     },
-    
+
     componentDidMount() {
         var screenname = 'uw_ischool';
         var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + screenname + '&count=1';
@@ -36,12 +36,11 @@ var UserInfo = React.createClass({
             });
         }.bind(this));
     },
-    
     handleSubmit(e) {
         e.preventDefault();
         logout();
     },
-    
+
     render() {
         return (
           <div className="userInfo">
