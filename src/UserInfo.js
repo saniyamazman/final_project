@@ -34,26 +34,35 @@ var UserInfo = React.createClass({
            if (user) {
                console.log('a user is logged in.');
                console.log(user.email);
-               
+               console.log(user);
            } else {
                console.log('no one is logged in.');
            }
+            var screenname = user.displayName;
             this.setState({
-                displayName: user.email,
+                displayName: screenname,
                 userInfo: {}
             });
+            console.log(this.state.displayName);
+            var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + this.state.displayName + '&count=1';
+            $.get(url).then(function(data) {
+                console.log(data[0].user);
+                this.setState({
+                   userInfo: data[0].user
+                });
+            }.bind(this));
         }.bind(this));
-        var screenname = this.state.displayName;
-        console.log('screenname: ' + screenname);
-        var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + screenname + '&count=1';
+        /*var screenname = this.state.displayName;
+        console.log('screenname: ' + screenname);*/
+        /*var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + this.state.displayName + '&count=1';
         $.get(url).then(function(data) {
             console.log(data[0].user);
             this.setState({
                userInfo: data[0].user
             });
-        }.bind(this));
-        console.log(this.state.displayName);
+        }.bind(this));*/
     },
+    
     handleSubmit:function(e) {
         e.preventDefault();
         logout();
@@ -65,7 +74,6 @@ var UserInfo = React.createClass({
                 <h1>User Information</h1>
                 <h3>You are currently logged in as...</h3>
                 <UserCard data={this.state.userInfo}/>
-                <p>{this.state.displayName}</p>
                 <form onSubmit={this.handleSubmit}>
                     <button type="submit" className="btn btn-primary">Log Out</button>
                 </form>

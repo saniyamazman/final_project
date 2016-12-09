@@ -83,14 +83,12 @@ var SearchBar = React.createClass( {
 		      			<form className="row" onSubmit={this.filter}>
 						    
 		      			<div className="form-group">
-						    <input
-
-									type="text"
+						    <input type="text"
 							    name="search"
 							    placeholder="Type a city name..."
 							    onChange={this.searchedCity}
-							    
-									onChange={this.searchedCity}
+							    onChange={this.searchedCity}
+                                className="black-text"
 						    />
 						    </div>
 						    <button type="submit" className="btn btn-primary">Explore</button>
