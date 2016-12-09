@@ -1,6 +1,7 @@
 import { ref, firebaseAuth } from './config'
 import { browserHistory, Router, Route, IndexRoute } from 'react-router'
 
+
 export function auth (email, pw, username) {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(saveUser)
@@ -15,16 +16,23 @@ export function auth (email, pw, username) {
 
 export function logout () {
   return firebaseAuth().signOut()
+  .then(redirectHome)
 }
 
 export function login (email, pw) {
   return firebaseAuth().signInWithEmailAndPassword(email, pw)
+  .then(redirectPage)
+}
 
+export function redirectHome(){
+    browserHistory.push("/login")
 }
 
 export function redirectPage(){
   browserHistory.push("/search")
 }
+
+
 
 export function saveUser (user) {
   return ref.child(`users/${user.uid}/info`)

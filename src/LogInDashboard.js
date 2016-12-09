@@ -11,7 +11,7 @@ import { Link } from 'react-router';
 export default class LogInDashboard extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
-    auth(this.email.value, this.pw.value)
+    login(this.email.value, this.pw.value)
   }
 
 
