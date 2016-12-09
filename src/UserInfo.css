@@ -9,7 +9,7 @@ h4 {
     margin-right: 25px;
     margin-top: 25px;
     padding: 0px 25px 15px 25px;
-    align-items: center;
+    text-align: center;
 }
 
 .profileimage {
@@ -29,7 +29,6 @@ h3 {
 
 div {
     font-family: "Roboto", sans-serif;
-    text-align: center;
 }
 
 .name {
@@ -43,6 +42,5 @@ div {
 
 .location {
     font-size: 20px;
-    
     font-weight: 300;
 }
