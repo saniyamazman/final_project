@@ -32,8 +32,7 @@ class App extends Component {
       <div className="App">
         <nav>
           <div className="nav-wrapper">
-            <Link activeClassName='active' to="/home"><img src={logo} className="App-logo" alt="logo" /></Link>
-            <Link className="h2"activeClassName='active' to="/search"><h2>TWIP</h2></Link>
+            <img src={logo} className="App-logo" alt="logo" /><h2>TWIP</h2>
 
             <Link className="link" activeClassName='active' to="/userinfo">USER INFO</Link>
           </div>
