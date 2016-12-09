@@ -2,15 +2,15 @@ import { ref, firebaseAuth } from './config'
 import { browserHistory, Router, Route, IndexRoute } from 'react-router'
 
 
-export function auth (email, pw, username) {
+export function auth (email, pw, displayName) {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(saveUser)
-    .then(redirectPage)
     .then(function (user) {
         user.updateProfile({
-            username: username
+            displayName: displayName
         })
     })
+    .then(redirectPage)
     .catch((error) => console.log('Something\'s off, try again!', error))
 }
 
@@ -37,7 +37,8 @@ export function saveUser (user) {
   return ref.child(`users/${user.uid}/info`)
     .set({
       email: user.email,
-      uid: user.uid
+      uid: user.uid,
+      displayName: user.displayName
     })
     .then(() => user)
 }

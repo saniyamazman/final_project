@@ -24,18 +24,35 @@ var UserInfo = React.createClass({
 
     getInitialState() {
         return ({
-            userInfo: {}
+            userInfo: {},
+            displayName: ''
         })
     },
 
     componentDidMount() {
-        var screenname = 'uw_ischool';
+        firebaseAuth().onAuthStateChanged(function(user) {
+           if (user) {
+               console.log('a user is logged in.');
+               console.log(user.email);
+               
+           } else {
+               console.log('no one is logged in.');
+           }
+            this.setState({
+                displayName: user.email,
+                userInfo: {}
+            });
+        }.bind(this));
+        var screenname = this.state.displayName;
+        console.log('screenname: ' + screenname);
         var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + screenname + '&count=1';
         $.get(url).then(function(data) {
+            console.log(data[0].user);
             this.setState({
                userInfo: data[0].user
             });
         }.bind(this));
+        console.log(this.state.displayName);
     },
     handleSubmit:function(e) {
         e.preventDefault();
@@ -48,8 +65,9 @@ var UserInfo = React.createClass({
                 <h1>User Information</h1>
                 <h3>You are currently logged in as...</h3>
                 <UserCard data={this.state.userInfo}/>
+                <p>{this.state.displayName}</p>
                 <form onSubmit={this.handleSubmit}>
-                <button type="submit" className="btn btn-primary">Log Out</button>
+                    <button type="submit" className="btn btn-primary">Log Out</button>
                 </form>
           </div>
         );

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import { auth } from './auth'
 import { login } from './auth'
 import bg from './nyc.jpg';
-import './App';
-import './LoginDashboard.css';
+import './App'; 
 import 'materialize-css';
 import './LogIn.css';
 import { Link } from 'react-router';
@@ -27,12 +26,12 @@ export default class LogInDashboard extends Component {
                 <h1>Log In</h1>
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group">
-                    <label>Email</label>
-                    <input className="form-control" ref={(email) => this.email = email} placeholder="Email"/>
+                    <label className="black-text">Email</label>
+                    <input className="form-control black-text" ref={(email) => this.email = email} placeholder="Email"/>
                   </div>
                   <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Password" ref={(pw) => this.pw = pw} />
+                    <label className="black-text">Password</label>
+                    <input type="password" className="form-control black-text" placeholder="Password" ref={(pw) => this.pw = pw} />
                   </div>
                   <div id="loginButton">
                   <button type="submit" className="btn btn-primary">Log In</button>
