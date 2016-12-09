@@ -5,6 +5,7 @@
   "devDependencies": {
     "react-scripts": "0.7.0"
   },
+    "homepage": "http://saniyamazman.github.io/final_project",
   "dependencies": {
     "axios": "^0.15.3",
     "babel": "^6.5.2",
