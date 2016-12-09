@@ -24,6 +24,10 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    padding-top: 0px;
+}
+
 div {
     font-family: "Roboto", sans-serif;
 }
@@ -41,9 +45,4 @@ div {
     font-size: 20px;
     margin-left: 110px;
     font-weight: 300;
-}
-
-.trips {
-    margin-top: 15px;
-    margin-left: 110px;
 }
