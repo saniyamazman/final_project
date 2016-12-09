@@ -9,14 +9,14 @@ h4 {
     margin-right: 25px;
     margin-top: 25px;
     padding: 0px 25px 15px 25px;
+    align-items: center;
 }
 
 .profileimage {
     height: 100px;
     border-radius: 10px;
-    float: left;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 h1 {
@@ -29,6 +29,7 @@ h3 {
 
 div {
     font-family: "Roboto", sans-serif;
+    text-align: center;
 }
 
 .name {
@@ -42,6 +43,6 @@ div {
 
 .location {
     font-size: 20px;
-    margin-left: 110px;
+    
     font-weight: 300;
 }
