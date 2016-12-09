@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import './UserInfo.css';
 import $ from 'jquery';
 import {ref, config, firebaseAuth} from './config.js';
-import { logout } from './auth';
+import {logout} from './auth';
 
 var UserCard = React.createClass({
     render() {
@@ -18,14 +18,13 @@ var UserCard = React.createClass({
     }
 });
 
-
-var UserInfo = React.createClass({
+export default class UserInfo extends Component {
 
     getInitialState() {
         return ({
             userInfo: {}
         })
-    },
+    }
 
     componentDidMount() {
         var screenname = 'uw_ischool';
@@ -35,24 +34,22 @@ var UserInfo = React.createClass({
                userInfo: data[0].user
             });
         }.bind(this));
-    },
-    handleSubmit(e) {
-        e.preventDefault();
-        logout();
-    },
+    }
+    handleSubmit = (e) => {
+      e.preventDefault()
+      logout()
+    }
 
     render() {
         return (
           <div className="userInfo">
                 <h1>User Information</h1>
                 <h3>You are currently logged in as...</h3>
-                <UserCard data={this.state.userInfo}/>
+                {/* <UserCard data={this.state.userInfo}/> */}
+                <form onSubmit={this.handleSubmit}>
                 <button type="submit" className="btn btn-primary">Log Out</button>
+                </form>
           </div>
         );
     }
-});
-
-
-
-export default UserInfo;
+}
