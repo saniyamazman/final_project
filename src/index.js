@@ -8,13 +8,13 @@ import LogInDashboard from './LogInDashboard';
 import RegisterDashboard from './RegisterDashboard';
 import UserInfo from './UserInfo';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {IndexRoute, Router, Route, hashHistory} from 'react-router';
+import { browserHistory, Router, Route, IndexRoute } from 'react-router'
 
 
 
 ReactDOM.render(
 	<MuiThemeProvider>
-		<Router history={hashHistory}>
+		<Router history={browserHistory}>
 			<Route path="/" component={App}>
 				<IndexRoute component={LogInDashboard}/>
 				<Route path="trips" component={LogInDashboard}/>
