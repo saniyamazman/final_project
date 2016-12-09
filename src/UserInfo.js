@@ -52,15 +52,6 @@ var UserInfo = React.createClass({
                 });
             }.bind(this));
         }.bind(this));
-        /*var screenname = this.state.displayName;
-        console.log('screenname: ' + screenname);*/
-        /*var url = 'https://faculty.washington.edu/joelross/proxy/twitter/timeline/?screen_name=' + this.state.displayName + '&count=1';
-        $.get(url).then(function(data) {
-            console.log(data[0].user);
-            this.setState({
-               userInfo: data[0].user
-            });
-        }.bind(this));*/
     },
     
     handleSubmit:function(e) {
